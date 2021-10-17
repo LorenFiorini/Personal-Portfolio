@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My portfolio',
+      title: 'Lorenzo',
       theme: _PortfolioTheme,
 
 
@@ -36,4 +36,3 @@ ThemeData _buildPortfolioTheme() {
 
   );
 }
-

@@ -16,23 +16,43 @@ class _MyHomePageState extends State<Home> {
         title: Text('Lorenzo Fiorini'),
 
       ),
+      backgroundColor: Color(0xFF84FFFF),
       body: Center(
           child: ListView(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(16),
             children: <Widget>[
               Container(
                 height: 500,
-                color: secondaryColor, //Colors.amber[600],
+                decoration: BoxDecoration(
+                  color: secondaryColor,
+                  borderRadius: BorderRadius.circular(50),
+                ),
                 child: const Center(child: Text('Entry A')),
               ),
+
+              const SizedBox(
+                height: 20,
+              ),
+
               Container(
                 height: 500,
-                color: secondaryColor, //Colors.amber[500],
+                decoration: BoxDecoration(
+                  color: secondaryColor,
+                  borderRadius: BorderRadius.circular(50),
+                ),
                 child: const Center(child: Text('Entry B')),
               ),
+
+              const SizedBox(
+                height: 20,
+              ),
+
               Container(
                 height: 500,
-                color: secondaryColor, //Colors.amber[100],
+                decoration: BoxDecoration(
+                  color: secondaryColor,
+                  borderRadius: BorderRadius.circular(50),
+                ),
                 child: const Center(child: Text('Entry C')),
               ),
             ],

@@ -11,6 +11,8 @@ class _MyHomePageState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Lorenzo Fiorini'),
@@ -22,12 +24,31 @@ class _MyHomePageState extends State<Home> {
             padding: const EdgeInsets.all(16),
             children: <Widget>[
               Container(
+                //width: screenWidth * (0.7),
                 height: 500,
                 decoration: BoxDecoration(
                   color: secondaryColor,
                   borderRadius: BorderRadius.circular(50),
                 ),
-                child: const Center(child: Text('Entry A')),
+                child: Row(
+                  //padding: const EdgeInsets.all(8),
+                  children: <Widget>[
+                    Flexible(
+                      flex: 2,
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: Text('My description is going to be here.'),
+                      ),
+                    ),
+                    Flexible(
+                      flex: 1,
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: Image.asset('assets/images/people_007-blk.png'),//Text('PICTURE'),
+                      ),
+                    ),
+                  ],
+                ),
               ),
 
               const SizedBox(

@@ -8,4 +8,8 @@ const secondaryColor = Color(0xff00acc1);
 const secondaryColorLight = Color(0xFF5ddef4);
 const secondaryColorDark = Color(0xFF007c91);
 
+const primaryPaper = Color(0xFFE8DCB8);
+const paperLight = Color(0xFFFFFFEA);
+const paperDark = Color(0xFFB5AA88);
+
 

@@ -11,10 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Lorenzo',
+      title: "Lorenzo's blog",
       theme: _PortfolioTheme,
-
-
 
       home: Home(),
     );

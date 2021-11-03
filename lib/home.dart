@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:personal_portfolio/colors.dart';
 import 'package:personal_portfolio/texts.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'dart:math';
 
 class Home extends StatefulWidget {
   @override
@@ -43,29 +43,46 @@ class _MyHomePageState extends State<Home> {
 
       body: Center(
           child: ListView(
-            padding:  EdgeInsets.fromLTRB(screenWidth/10, screenWidth/20, screenWidth/10, screenWidth/5),
+            padding:  EdgeInsets.fromLTRB(
+                screenWidth * 0.1,
+                screenWidth * 0.0625,
+                screenWidth * 0.1,
+                screenWidth * 0.0625,
+            ),
             children: <Widget>[
 
               Container(
                 height: 700,
-                padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   color: primaryPaper,
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(35),
+                  boxShadow: [
+                    BoxShadow(
+                      color: paperDark,
+                      blurRadius: 2.0,
+                      spreadRadius: 1.0,
+                      offset: Offset(1.5, 2.4), // shadow direction: bottom right
+                    )
+                  ],
                 ),
                 child: Row(
                   children: <Widget>[
 
                     Flexible(
-                      flex: 10,
+                      flex: 100,
                       child: Container(
-                        padding: EdgeInsets.all(10),
+                        padding: EdgeInsets.fromLTRB(
+                          screenWidth / 10 * (5 / 8),
+                          screenWidth / 10 * pow(5 / 8, 2),
+                          screenWidth / 10 * (5 / 8),
+                          screenWidth / 10 * pow(5 / 8, 2),
+                        ),
                         decoration: BoxDecoration(
-                          color: primaryPaper,
+                          //color: Colors.red,
                           borderRadius: BorderRadius.circular(25),
                         ),
-                        alignment: Alignment.center,
+                        alignment: Alignment.topCenter,
                         child: Text(
                             myDescription,
                             style: GoogleFonts.lato(
@@ -75,19 +92,32 @@ class _MyHomePageState extends State<Home> {
                       ),
                     ),
 
+                    VerticalDivider(
+                      indent: (MediaQuery.of(context).size.height) * 0.1,
+                      endIndent: (MediaQuery.of(context).size.height) * 0.1,
+                      thickness: 8/5,
+                      color: paperDark,
+                    ),
+
                     Flexible(
-                      flex: 6,
+                      flex: 61,
                       child: Container(
+                        padding: EdgeInsets.fromLTRB(
+                          screenWidth / 10 * pow(5 / 8, 2),
+                          screenWidth / 10 * pow(5 / 8, 3),
+                          screenWidth / 10 * pow(5 / 8, 3),
+                          screenWidth / 10 * pow(5 / 8, 2),
+                        ),
                         alignment: Alignment.center,
-                        child: Image.asset('assets/images/people_007-blk.png'),
+                        child: Image.asset('assets/images/people_007-blk-w.png'),
                       ),
                     ),
                   ],
                 ),
               ),
 
-              const SizedBox(
-                height: 50,
+              SizedBox(
+                height: screenWidth / 10 * (5 / 8),
               ),
 
               Container(
@@ -99,8 +129,8 @@ class _MyHomePageState extends State<Home> {
                 child: const Center(child: Text('Entry B')),
               ),
 
-              const SizedBox(
-                height: 50,
+              SizedBox(
+                height: screenWidth / 10 * (5 / 8),
               ),
 
               Container(

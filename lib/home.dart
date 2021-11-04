@@ -44,15 +44,15 @@ class _MyHomePageState extends State<Home> {
       body: Center(
           child: ListView(
             padding:  EdgeInsets.fromLTRB(
-                screenWidth * 0.1,
-                screenWidth * 0.0625,
-                screenWidth * 0.1,
-                screenWidth * 0.0625,
+                screenWidth / 10,
+                screenWidth / 10 * (5 / 8),
+                screenWidth / 10,
+                screenWidth / 10 * (5 / 8),
             ),
             children: <Widget>[
 
               Container(
-                height: 700,
+                height: screenWidth * 0.5 * (5 / 8),
                 decoration: BoxDecoration(
                   color: primaryPaper,
                   shape: BoxShape.rectangle,
@@ -85,8 +85,9 @@ class _MyHomePageState extends State<Home> {
                         alignment: Alignment.topCenter,
                         child: Text(
                             myDescription,
-                            style: GoogleFonts.lato(
-                              fontSize: 18,
+                            style: GoogleFonts.caveat(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 28,
                             ),
                         ),
                       ),

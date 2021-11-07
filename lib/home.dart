@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:personal_portfolio/colors.dart';
 import 'package:personal_portfolio/texts.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'dart:math';
 
 class Home extends StatefulWidget {
@@ -19,7 +21,9 @@ class _MyHomePageState extends State<Home> {
         shape: RoundedRectangleBorder(),
         centerTitle: true,
         title: Text(
-          'Lorenzo Fiorini',
+          //'Lorenzo Fiorini',
+          screenWidth.toString(),
+
           style: GoogleFonts.merienda(
             textStyle: TextStyle(
               fontSize: 28,
@@ -30,6 +34,36 @@ class _MyHomePageState extends State<Home> {
             ),
           ),
         ),
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
+          },
+        ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: _launchURL('https://github.com/LorenFiorini'),//() {},
+            icon: FaIcon(
+              FontAwesomeIcons.githubSquare,
+              color: Colors.black,
+            ),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: FaIcon(
+              FontAwesomeIcons.linkedin,
+              color: Colors.black,
+            ),
+          ),
+        ],
         elevation: 5,
         backgroundColor: paperDark,
         shadowColor: Colors.brown,
@@ -38,6 +72,7 @@ class _MyHomePageState extends State<Home> {
       body: Column(
         children: <Widget>[
           Flexible(
+            fit: FlexFit.tight,
             child: ListView(
               padding: EdgeInsets.fromLTRB(
                 screenWidth / 10,
@@ -83,7 +118,7 @@ class _MyHomePageState extends State<Home> {
                               myDescription,
                               style: GoogleFonts.caveat(
                                 height: 1.6,
-                                letterSpacing: 5/8,
+                                letterSpacing: 5 / 8,
                                 wordSpacing: 1,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 20 + screenWidth / 230,
@@ -144,4 +179,8 @@ class _MyHomePageState extends State<Home> {
       ),
     );
   }
+}
+
+void _launchURL(_url) async {
+  await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
 }

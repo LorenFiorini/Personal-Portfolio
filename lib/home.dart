@@ -1,5 +1,3 @@
-//import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:personal_portfolio/colors.dart';
 import 'package:personal_portfolio/texts.dart';
@@ -12,19 +10,16 @@ class Home extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<Home> {
-
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-
       appBar: AppBar(
         shape: RoundedRectangleBorder(),
         centerTitle: true,
         title: Text(
-          //'Lorenzo Fiorini',
-          screenWidth.toString(),
+          'Lorenzo Fiorini',
           style: GoogleFonts.merienda(
             textStyle: TextStyle(
               fontSize: 28,
@@ -39,24 +34,20 @@ class _MyHomePageState extends State<Home> {
         backgroundColor: paperDark,
         shadowColor: Colors.brown,
       ),
-
-      backgroundColor: paperLight, //Color(0xFF84FFFF),
-
+      backgroundColor: paperLight,
       body: Column(
-          children: <Widget>[
-            Expanded(
-              child: ListView(
-                padding:  EdgeInsets.fromLTRB(
-                    screenWidth / 10,
-                    screenWidth / 10 * (5 / 8),
-                    screenWidth / 10,
-                    screenWidth / 10 * (5 / 8),
-                ),
-                children: <Widget>[
-
-                  Expanded(child:
-                  Container(
-                    //height: screenWidth * 0.5 * (5 / 8),
+        children: <Widget>[
+          Flexible(
+            child: ListView(
+              padding: EdgeInsets.fromLTRB(
+                screenWidth / 10,
+                screenWidth / 10 * (5 / 8),
+                screenWidth / 10,
+                screenWidth / 10 * (5 / 8),
+              ),
+              children: <Widget>[
+                IntrinsicHeight(
+                  child: Container(
                     decoration: BoxDecoration(
                       color: primaryPaper,
                       shape: BoxShape.rectangle,
@@ -66,20 +57,22 @@ class _MyHomePageState extends State<Home> {
                           color: paperDark,
                           blurRadius: 2.0,
                           spreadRadius: 1.0,
-                          offset: Offset(1.5, 2.4), // shadow direction: bottom right
+                          offset: Offset(
+                              1.5, 2.4), // shadow direction: bottom right
                         )
                       ],
                     ),
+                    //height: MediaQuery.of(context).size.height,
+
                     child: Row(
                       children: <Widget>[
-
                         Flexible(
                           flex: 100,
                           child: Container(
                             padding: EdgeInsets.fromLTRB(
-                              screenWidth / 10 * (5 / 8),
                               screenWidth / 10 * pow(5 / 8, 2),
-                              screenWidth / 10 * (5 / 8),
+                              screenWidth / 10 * pow(5 / 8, 3),
+                              screenWidth / 10 * pow(5 / 8, 3),
                               screenWidth / 10 * pow(5 / 8, 2),
                             ),
                             decoration: BoxDecoration(
@@ -87,22 +80,23 @@ class _MyHomePageState extends State<Home> {
                             ),
                             alignment: Alignment.topCenter,
                             child: Text(
-                                myDescription,
-                                style: GoogleFonts.caveat(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 20 + screenWidth / 230,
-                                ),
+                              myDescription,
+                              style: GoogleFonts.caveat(
+                                height: 1.6,
+                                letterSpacing: 5/8,
+                                wordSpacing: 1,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 20 + screenWidth / 230,
+                              ),
                             ),
                           ),
                         ),
-
                         VerticalDivider(
-                          indent: (MediaQuery.of(context).size.height) * 0.1,
-                          endIndent: (MediaQuery.of(context).size.height) * 0.1,
-                          thickness: 8/5,
+                          indent: screenWidth / 10 * pow(5 / 8, 2),
+                          endIndent: screenWidth / 10 * pow(5 / 8, 2),
+                          thickness: 8 / 5,
                           color: paperDark,
                         ),
-
                         Flexible(
                           flex: 61,
                           child: Container(
@@ -113,48 +107,41 @@ class _MyHomePageState extends State<Home> {
                               screenWidth / 10 * pow(5 / 8, 2),
                             ),
                             alignment: Alignment.center,
-                            child: Image.asset('assets/images/people_007-blk-w.png'),
+                            child: Image.asset(
+                                'assets/images/people_007-blk-w.png'),
                           ),
                         ),
                       ],
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: screenWidth / 10 * (5 / 8),
+                ), /*
+                Container(
+                  height: 500,
+                  decoration: BoxDecoration(
+                    color: primaryPaper,
+                    borderRadius: BorderRadius.circular(50),
                   ),
-
-
-                  SizedBox(
-                    height: screenWidth / 10 * (5 / 8),
+                  child: const Center(child: Text('Entry B')),
+                ),
+                SizedBox(
+                  height: screenWidth / 10 * (5 / 8),
+                ),
+                Container(
+                  height: 500,
+                  decoration: BoxDecoration(
+                    color: primaryPaper,
+                    borderRadius: BorderRadius.circular(50),
                   ),
-
-                  Container(
-                    height: 500,
-                    decoration: BoxDecoration(
-                      color: primaryPaper,
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: const Center(child: Text('Entry B')),
-                  ),
-
-                  SizedBox(
-                    height: screenWidth / 10 * (5 / 8),
-                  ),
-
-                  Container(
-                    height: 500,
-                    decoration: BoxDecoration(
-                      color: primaryPaper,
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: const Center(child: Text('Entry C')),
-                  ),
-                ],
-              ),
+                  child: const Center(child: Text('Entry C')),
+                ),*/
+              ],
             ),
+          ),
         ],
-
       ),
     );
   }
 }
-
-

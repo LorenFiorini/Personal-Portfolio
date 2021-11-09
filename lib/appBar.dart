@@ -18,14 +18,14 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
+    //double screenWidth = MediaQuery.of(context).size.width;
 
     return AppBar(
       shape: RoundedRectangleBorder(),
       centerTitle: true,
       title: Text(
-        //'Lorenzo Fiorini',
-        screenWidth.toString(),
+        'Lorenzo Fiorini',
+        //screenWidth.toString(),
 
         style: GoogleFonts.merienda(
           textStyle: TextStyle(
@@ -54,21 +54,20 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: <Widget>[
         IconButton(
           padding: EdgeInsets.all(2),
-          onPressed: _launchURL,
+          onPressed: _launchGithub,
           icon: FaIcon(
             FontAwesomeIcons.githubSquare,
             color: Colors.black,
+            semanticLabel: 'Open GitHub',
           ),
-        ),
-        SizedBox(
-          width: 5,
         ),
         IconButton(
           padding: EdgeInsets.all(2),
-          onPressed: () {},
+          onPressed: _launchLinkedin,
           icon: FaIcon(
             FontAwesomeIcons.linkedin,
             color: Colors.black,
+            semanticLabel: 'Open LinkedIn',
           ),
         ),
         SizedBox(
@@ -85,8 +84,12 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => new Size.fromHeight(appBar.preferredSize.height);
 }
 
+const _Github = 'https://github.com/LorenFiorini';
+const _Linkedin = 'https://www.linkedin.com/in/lorenfiorini/';
 
-void _launchURL() async {
-  const _url = 'https://github.com/LorenFiorini';
-  await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
+void _launchGithub() async {
+  await canLaunch(_Github) ? await launch(_Github) : throw 'Could not launch $_Github';
+}
+void _launchLinkedin() async {
+  await canLaunch(_Linkedin) ? await launch(_Linkedin) : throw 'Could not launch $_Linkedin';
 }

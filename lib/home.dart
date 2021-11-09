@@ -1,3 +1,6 @@
+import 'dart:html';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_portfolio/colors.dart';
 import 'package:personal_portfolio/texts.dart';
@@ -19,7 +22,6 @@ class _MyHomePageState extends State<Home> {
       appBar: BaseAppBar(
         appBar: AppBar(),
       ),
-
       backgroundColor: paperLight,
       body: Column(
         children: <Widget>[
@@ -87,12 +89,8 @@ class _MyHomePageState extends State<Home> {
                         Flexible(
                           flex: 61,
                           child: Container(
-                            padding: EdgeInsets.fromLTRB(
-                              screenWidth / 10 * pow(5 / 8, 2),
-                              screenWidth / 10 * pow(5 / 8, 3),
-                              screenWidth / 10 * pow(5 / 8, 3),
-                              screenWidth / 10 * pow(5 / 8, 2),
-                            ),
+                            padding: EdgeInsets.all(
+                                screenWidth / 10 * pow(5 / 8, 2)),
                             alignment: Alignment.center,
                             child: Image.asset(
                                 'assets/images/people_007-blk-w.png'),
@@ -102,17 +100,63 @@ class _MyHomePageState extends State<Home> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: screenWidth / 10 * (5 / 8),
-                ), /*
                 Container(
-                  height: 500,
-                  decoration: BoxDecoration(
-                    color: primaryPaper,
-                    borderRadius: BorderRadius.circular(50),
+                  padding: EdgeInsets.all(screenWidth / 10 * (5 / 8)),
+                  child: Text(
+                    'Projects',
+                    style: GoogleFonts.merienda(
+                      height: 1.6,
+                      letterSpacing: 5 / 8,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 20 + screenWidth / 230,
+                    ),
                   ),
-                  child: const Center(child: Text('Entry B')),
                 ),
+                IntrinsicHeight(
+                  child: Container(
+                    width : screenWidth * 3/4,
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          // project
+                          children: <Widget>[
+                            Flexible(
+                              flex: 8,
+                              child: Column(
+                                children: [
+                                  // Title
+                                  Row(
+                                    children: <Widget>[
+                                      Align(
+                                        alignment: Alignment.topRight,
+                                        child: Text('Shrine'),
+                                      ),
+                                      // TODO: Add hyperlink
+                                    ],
+                                  ),
+                                  // TODO: Description
+                                  Text(
+                                      'Google Fonts is a font embedding service library. This includes free and open source font families, an interactive web directory for browsing the library, and APIs for using the fonts via CSS and Android.'),
+                                ],
+                              ),
+                            ),
+                            // TODO: Add Pictures
+                            Flexible(
+                              flex: 5,
+                              child: Image.asset(
+                                  'assets/images/people_007-blk-w.png'),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                /*
+                Container(
+                  child: Center(child: Text('Entry B')),
+                ),
+
                 SizedBox(
                   height: screenWidth / 10 * (5 / 8),
                 ),
@@ -132,5 +176,3 @@ class _MyHomePageState extends State<Home> {
     );
   }
 }
-
-

@@ -23,10 +23,9 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       shape: RoundedRectangleBorder(),
       centerTitle: true,
-      title: Text(
+      title: SelectableText(
         'Lorenzo Fiorini',
         //screenWidth.toString(),
-
         style: GoogleFonts.merienda(
           textStyle: TextStyle(
             fontSize: 28,

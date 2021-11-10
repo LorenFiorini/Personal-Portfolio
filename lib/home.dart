@@ -68,7 +68,7 @@ class _MyHomePageState extends State<Home> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                             alignment: Alignment.topCenter,
-                            child: Text(
+                            child: SelectableText(
                               myDescription,
                               style: GoogleFonts.caveat(
                                 height: 1.6,
@@ -102,7 +102,7 @@ class _MyHomePageState extends State<Home> {
                 ),
                 Container(
                   padding: EdgeInsets.all(screenWidth / 10 * (5 / 8)),
-                  child: Text(
+                  child: SelectableText(
                     'Projects',
                     style: GoogleFonts.merienda(
                       height: 1.6,
@@ -114,30 +114,35 @@ class _MyHomePageState extends State<Home> {
                 ),
                 IntrinsicHeight(
                   child: Container(
-                    width : screenWidth * 3/4,
+                    padding: EdgeInsets.all(screenWidth / 10 * (5 / 8)),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+
                       children: <Widget>[
                         Row(
                           // project
                           children: <Widget>[
                             Flexible(
                               flex: 8,
-                              child: Column(
-                                children: [
-                                  // Title
-                                  Row(
+                              child: Container(
+                                child: Column(
                                     children: <Widget>[
                                       Align(
-                                        alignment: Alignment.topRight,
+                                        alignment: Alignment.topLeft,
                                         child: Text('Shrine'),
                                       ),
                                       // TODO: Add hyperlink
+
+                                      // TODO: Description
+                                      Align(
+                                        alignment: Alignment.bottomCenter,
+                                        child: Text(
+                                            'Google Fonts is a font embedding service library. This includes free and open source font families, an interactive web directory for browsing the library, and APIs for using the fonts via CSS and Android.'),
+                                      ),
                                     ],
                                   ),
-                                  // TODO: Description
-                                  Text(
-                                      'Google Fonts is a font embedding service library. This includes free and open source font families, an interactive web directory for browsing the library, and APIs for using the fonts via CSS and Android.'),
-                                ],
+
+
                               ),
                             ),
                             // TODO: Add Pictures

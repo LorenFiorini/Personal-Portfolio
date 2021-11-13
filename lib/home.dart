@@ -17,6 +17,10 @@ class _MyHomePageState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
+    double tenth = screenWidth / 10;
+    double tenth_1 = screenWidth / 10 * (5 / 8);
+    double tenth_2 = screenWidth / 10 * pow(5 / 8, 2);
+    double tenth_3 = screenWidth / 10 * pow(5 / 8, 3);
 
     return Scaffold(
       appBar: BaseAppBar(
@@ -29,10 +33,10 @@ class _MyHomePageState extends State<Home> {
             fit: FlexFit.tight,
             child: ListView(
               padding: EdgeInsets.fromLTRB(
-                screenWidth / 10,
-                screenWidth / 10 * (5 / 8),
-                screenWidth / 10,
-                screenWidth / 10 * (5 / 8),
+                tenth,
+                tenth_1,
+                tenth,
+                tenth_1,
               ),
               children: <Widget>[
                 IntrinsicHeight(
@@ -100,63 +104,70 @@ class _MyHomePageState extends State<Home> {
                     ),
                   ),
                 ),
+
+                Container(
+                  padding: EdgeInsets.only(top: tenth_2),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: SelectableText(
+                      'Projects',
+                      style: GoogleFonts.merienda(
+                        height: 1.6,
+                        letterSpacing: 5 / 8,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20 + screenWidth / 230,
+                      ),
+                    ),
+                  ),
+                ),
+
                 Container(
                   padding: EdgeInsets.all(screenWidth / 10 * (5 / 8)),
-                  child: SelectableText(
-                    'Projects',
-                    style: GoogleFonts.merienda(
-                      height: 1.6,
-                      letterSpacing: 5 / 8,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 20 + screenWidth / 230,
-                    ),
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
                   ),
-                ),
-                IntrinsicHeight(
-                  child: Container(
-                    padding: EdgeInsets.all(screenWidth / 10 * (5 / 8)),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Row(
+                        // project
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        //crossAxisAlignment: CrossAxisAlignment.,
+                        children: <Widget>[
+                          Flexible(
+                            flex: 8,
+                            child: Container(
+                              padding: EdgeInsets.all(tenth_2),
+                              decoration: BoxDecoration(
+                                color: Colors.red,
+                              ),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: <Widget>[
+                                  Text('Shrine'),
 
-                      children: <Widget>[
-                        Row(
-                          // project
-                          children: <Widget>[
-                            Flexible(
-                              flex: 8,
-                              child: Container(
-                                child: Column(
-                                    children: <Widget>[
-                                      Align(
-                                        alignment: Alignment.topLeft,
-                                        child: Text('Shrine'),
-                                      ),
-                                      // TODO: Add hyperlink
+                                  // TODO: Add hyperlink
 
-                                      // TODO: Description
-                                      Align(
-                                        alignment: Alignment.bottomCenter,
-                                        child: Text(
-                                            'Google Fonts is a font embedding service library. This includes free and open source font families, an interactive web directory for browsing the library, and APIs for using the fonts via CSS and Android.'),
-                                      ),
-                                    ],
-                                  ),
-
-
+                                  // TODO: Description
+                                  Text(
+                                      'Google Fonts is a font embedding service library. This includes free and open source font families, an interactive web directory for browsing the library, and APIs for using the fonts via CSS and Android.'),
+                                ],
                               ),
                             ),
-                            // TODO: Add Pictures
-                            Flexible(
-                              flex: 5,
-                              child: Image.asset(
-                                  'assets/images/people_007-blk-w.png'),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                          ),
+                          // TODO: Add Pictures
+                          Flexible(
+                            flex: 5,
+                            child: Image.asset(
+                                'assets/images/people_007-blk-w.png'),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
+
                 /*
                 Container(
                   child: Center(child: Text('Entry B')),

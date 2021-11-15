@@ -63,10 +63,10 @@ class _MyHomePageState extends State<Home> {
                           flex: 100,
                           child: Container(
                             padding: EdgeInsets.fromLTRB(
-                              screenWidth / 10 * pow(5 / 8, 2),
-                              screenWidth / 10 * pow(5 / 8, 3),
-                              screenWidth / 10 * pow(5 / 8, 3),
-                              screenWidth / 10 * pow(5 / 8, 2),
+                              tenth_2,
+                              tenth_3,
+                              tenth_3,
+                              tenth_2,
                             ),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
@@ -74,27 +74,26 @@ class _MyHomePageState extends State<Home> {
                             alignment: Alignment.topCenter,
                             child: SelectableText(
                               myDescription,
-                              style: GoogleFonts.caveat(
+                              style: GoogleFonts.kalam( //caveat(
                                 height: 1.6,
-                                letterSpacing: 5 / 8,
-                                wordSpacing: 1,
+                                //letterSpacing: 5 / 8,
+                                //wordSpacing: 1,
                                 fontWeight: FontWeight.w600,
-                                fontSize: 20 + screenWidth / 230,
+                                fontSize: 18 + screenWidth / 250,
                               ),
                             ),
                           ),
                         ),
                         VerticalDivider(
-                          indent: screenWidth / 10 * pow(5 / 8, 2),
-                          endIndent: screenWidth / 10 * pow(5 / 8, 2),
+                          indent: tenth_2,
+                          endIndent: tenth_2,
                           thickness: 8 / 5,
                           color: paperDark,
                         ),
                         Flexible(
                           flex: 61,
                           child: Container(
-                            padding: EdgeInsets.all(
-                                screenWidth / 10 * pow(5 / 8, 2)),
+                            padding: EdgeInsets.all(tenth_2),
                             alignment: Alignment.center,
                             child: Image.asset(
                                 'assets/images/people_007-blk-w.png'),
@@ -104,6 +103,7 @@ class _MyHomePageState extends State<Home> {
                     ),
                   ),
                 ),
+
 
                 Container(
                   padding: EdgeInsets.only(top: tenth_2),
@@ -122,7 +122,7 @@ class _MyHomePageState extends State<Home> {
                 ),
 
                 Container(
-                  padding: EdgeInsets.all(screenWidth / 10 * (5 / 8)),
+                  padding: EdgeInsets.all(tenth_1),
                   decoration: BoxDecoration(
                     color: Colors.blue,
                   ),

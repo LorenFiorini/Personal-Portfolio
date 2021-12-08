@@ -3,6 +3,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:personal_portfolio/colors.dart';
+import 'package:personal_portfolio/navigation.dart';
 
 
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -36,6 +37,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ),
+      /*
       leading: Builder(
         builder: (BuildContext context) {
           return IconButton(
@@ -43,13 +45,13 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
               Icons.menu,
               color: Colors.black,
             ),
-            onPressed: () {
+            onPressed:  () {
               Scaffold.of(context).openDrawer();
             },
             tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
           );
         },
-      ),
+      ),*/
       actions: <Widget>[
         IconButton(
           padding: EdgeInsets.all(2),

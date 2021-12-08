@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:personal_portfolio/colors.dart';
 import 'package:personal_portfolio/texts.dart';
 import 'package:personal_portfolio/appBar.dart';
+import 'package:personal_portfolio/navigation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:math';
 
@@ -26,6 +27,7 @@ class _MyHomePageState extends State<Home> {
       appBar: BaseAppBar(
         appBar: AppBar(),
       ),
+      drawer: const NavigationDrawerWidget(),
       backgroundColor: paperLight,
       body: Column(
         children: <Widget>[

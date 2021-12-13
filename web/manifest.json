@@ -1,6 +1,6 @@
 {
-    "name": "personal_portfolio",
-    "short_name": "personal_portfolio",
+    "name": "Lorenzo's blog",
+    "short_name": "Lorenzo's blog",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

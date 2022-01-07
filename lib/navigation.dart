@@ -12,60 +12,61 @@ class NavigationDrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      //color: const Color(0xFF63a4ff),
-      child: ListView(
-        children: [
-          DrawerHeader(
-            padding: const EdgeInsets.fromLTRB(16.0, 24.0, 16.0, 24.0),
-            decoration: const BoxDecoration(
-              color: Color(0xFF1976d2),
-            ),
-            child: Image.asset("helmet/Blue-helmet.png"),
+    return Material(
+        color: Colors.black,
+        child: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(
+                padding: EdgeInsets.all(24),
+                //const EdgeInsets.fromLTRB(16.0, 24.0, 16.0, 24.0),
+                decoration: const BoxDecoration(
+                  color: Color(0xFF1976d2),
+                ),
+                child: Image.asset(""),
+              ),
+              ListTile(
+                leading: Icon(Icons.home, color: color),
+                title: Text("Home", style: TextStyle(color: color)),
+                hoverColor: hoverColor,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Home()),
+                  );
+                  //Navigator.pop(context);
+                },
+              ),
+              const SizedBox(height: 24),
+              const Divider(color: Colors.black54),
+              const SizedBox(height: 24),
+              ListTile(
+                leading: Icon(Icons.sports_motorsports_rounded, color: color),
+                title: Text('The Helmet', style: TextStyle(color: color)),
+                hoverColor: hoverColor,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Home()),
+                  );
+                  //Navigator.pop(context);
+                },
+              ),
+              const SizedBox(height: 16),
+              ListTile(
+                leading: Icon(Icons.local_hospital, color: color),
+                title: Text('Statistics', style: TextStyle(color: color)),
+                hoverColor: hoverColor,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Home()),
+                  );
+                  //Navigator.pop(context);
+                },
+              ),
+            ],
           ),
-          ListTile(
-            leading: Icon(Icons.home, color: color),
-            title: Text("Home", style: TextStyle(color: color)),
-            hoverColor: hoverColor,
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Home()),
-              );
-              //Navigator.pop(context);
-            },
-          ),
-          const SizedBox(height: 24),
-          const Divider(color: Colors.black54),
-          const SizedBox(height: 24),
-          ListTile(
-            leading: Icon(Icons.sports_motorsports_rounded, color: color),
-            title: Text('The Helmet', style: TextStyle(color: color)),
-            hoverColor: hoverColor,
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Home()),
-              );
-              //Navigator.pop(context);
-            },
-          ),
-          const SizedBox(height: 16),
-          ListTile(
-            leading: Icon(Icons.local_hospital, color: color),
-            title: Text('Statistics', style: TextStyle(color: color)),
-            hoverColor: hoverColor,
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Home()),
-              );
-              //Navigator.pop(context);
-            },
-          ),
-        ],
-      ),
-    );
+        ));
   }
-
 }

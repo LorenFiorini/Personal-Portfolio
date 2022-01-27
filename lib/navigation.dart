@@ -21,7 +21,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                 padding: EdgeInsets.all(24),
                 //const EdgeInsets.fromLTRB(16.0, 24.0, 16.0, 24.0),
                 decoration: const BoxDecoration(
-                  color: Color(0xFF1976d2),
+                  color: Colors.brown,
                 ),
                 child: Image.asset(""),
               ),

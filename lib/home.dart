@@ -1,4 +1,4 @@
-import 'dart:html';
+//import 'dart:html';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -170,22 +170,6 @@ class _MyHomePageState extends State<Home> {
                   ),
                 ),
 
-                /*
-                Container(
-                  child: Center(child: Text('Entry B')),
-                ),
-
-                SizedBox(
-                  height: screenWidth / 10 * (5 / 8),
-                ),
-                Container(
-                  height: 500,
-                  decoration: BoxDecoration(
-                    color: primaryPaper,
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  child: const Center(child: Text('Entry C')),
-                ),*/
               ],
             ),
           ),

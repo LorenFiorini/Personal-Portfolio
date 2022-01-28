@@ -2,8 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/colors.dart';
-import 'package:personal_portfolio/texts.dart';
+import 'package:personal_portfolio/third/colors.dart';
+import 'package:personal_portfolio/third/texts.dart';
 import 'package:personal_portfolio/appBar.dart';
 import 'package:personal_portfolio/navigation.dart';
 import 'package:google_fonts/google_fonts.dart';

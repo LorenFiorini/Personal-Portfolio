@@ -2,7 +2,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:personal_portfolio/colors.dart';
+import 'package:personal_portfolio/third/colors.dart';
 import 'package:personal_portfolio/navigation.dart';
 
 

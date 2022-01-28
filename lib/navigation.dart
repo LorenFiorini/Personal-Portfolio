@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:personal_portfolio/home.dart';
+import 'package:personal_portfolio/pages/home.dart';
 import 'package:personal_portfolio/appBar.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
@@ -42,7 +42,7 @@ class NavigationDrawerWidget extends StatelessWidget {
               const SizedBox(height: 24),
               ListTile(
                 leading: Icon(Icons.sports_motorsports_rounded, color: color),
-                title: Text('The Helmet', style: TextStyle(color: color)),
+                title: Text('Projects', style: TextStyle(color: color)),
                 hoverColor: hoverColor,
                 onTap: () {
                   Navigator.push(

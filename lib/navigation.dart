@@ -41,7 +41,7 @@ class NavigationDrawerWidget extends StatelessWidget {
               const Divider(color: Colors.black54),
               const SizedBox(height: 24),
               ListTile(
-                leading: Icon(Icons.sports_motorsports_rounded, color: color),
+                leading: Icon(Icons.keyboard, color: color),
                 title: Text('Projects', style: TextStyle(color: color)),
                 hoverColor: hoverColor,
                 onTap: () {

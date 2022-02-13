@@ -152,8 +152,7 @@ class _MyHomePageState extends State<Home> {
                                   // TODO: Add hyperlink
 
                                   // TODO: Description
-                                  Text(
-                                      'Google Fonts is a font embedding service library. This includes free and open source font families, an interactive web directory for browsing the library, and APIs for using the fonts via CSS and Android.'),
+                                  Text(projectText),
                                 ],
                               ),
                             ),
